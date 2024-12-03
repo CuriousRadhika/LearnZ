@@ -1,0 +1,127 @@
+{% load static %}
+<html>
+    <head>
+      <link
+      rel="shortcut icon"
+      type="png"
+      href="{% static 'authentication/images/icon/logo.png' %}"
+    />
+        <title>File Upload</title>
+        <link
+      href="{% static 'css/studentupload.css' %}"
+      rel="stylesheet"
+    />
+    
+    <link
+    href="{% static 'css/upload.css' %}"
+    rel="stylesheet"
+  />
+        <script src="{% static 'jquery/jquery.min.js'%}"></script>
+        
+<script>
+	$(document).ready(function(){
+		$(".alert").hide(4000);
+	});		
+</script>
+    </head>
+    <body>
+        <header id="header">
+            <div class="inner flex">
+              <div class="logo">
+                <a href="{% url 'index' %}">
+                  <img
+                    src="{% static './features/images/logo_full.png' %}"
+                    alt="logo"
+                /></a>
+              </div>
+              <nav>
+                <ul
+                  id="primary-navigation"
+                  data-visible="false"
+                  class="primary-navigation flex"
+                >
+                  <li><a href="" class="cour">Courses</a></li>
+                  <li><a href="{% url 'suggestedvideos' %}">Refrences</a></li>
+                  <li><a href="{% url 'student_quizbase' %}">Quiz</a></li>
+                  <li><a href="" class="syl">Syllabus</a></li>
+                  <li><a href="{% url 'student_notesbase' %}">Notes</a></li>
+                </ul>
+              </nav>
+              <a href="{% url 'student_signin' %}">
+                <ul class="get-started">
+                  <li>Sign Out</li>
+                </ul>
+              </a>
+            </div>
+          </header>
+        <div class="container-fluid single" style="margin-top: 50px">
+        <div class="view">
+            
+            <h3>View File</h3>
+            <table class="styled-table nodelete">
+                <thead>
+                    <tr>
+                        <th style="text-align:center">S.No</th>
+                        <th>Note Name</th>
+                        <th>File</th>                 
+                    </tr>                    
+                </thead>
+                {% if mydata %}
+                {% for data in mydata %}
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center">{{forloop.counter}}</td>
+                            <td>{{data.file_name}}</td>
+                            <td><a href="{{data.my_file.url}}">{{data.my_file}}</a></td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+                {% else %}
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td style="text-align: center;">No Data</td>
+                    
+                  </tr>
+                </tbody>
+                
+              </table>
+            
+            {% endif %}
+        </div>
+        </div>
+    </body>
+    <script>
+      var syllabus_url = "{{syllabus.my_file.url}}";
+      var syl = document.getElementsByClassName("syl");
+      Array.from(syl).forEach((s)=>{
+        s.addEventListener('click',(evt)=>{
+        evt.preventDefault();
+        if (syllabus_url == "") {
+          alert("No Syllabus Exsist");
+        }
+        else
+        {
+          window.location.href = syllabus_url;
+        }
+        });
+      });
+  
+    </script>
+    <script>
+      var cour = document.getElementsByClassName("cour");
+      Array.from(cour).forEach((c)=>{
+        c.addEventListener('click',(evt)=>{
+          evt.preventDefault();
+          $.ajax({
+          type: 'GET',
+          url: '/courses/',
+          success: function(response) {
+            window.location.href='/courses/';
+          }
+        });
+        });
+        
+      });
+    </script>
+</html>

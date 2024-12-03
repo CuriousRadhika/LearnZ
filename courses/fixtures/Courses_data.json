@@ -1,0 +1,183 @@
+[
+    {
+        "model": "courses.Courses",
+        "pk": 1,
+        "fields": {
+            "sem": 1,
+            "crs_id": "1BEE",
+            "course": "Cloud Computing"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 2,
+        "fields": {
+            "sem": 1,
+            "crs_id": "1EME",
+            "course": "Agile Methodologies"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 3,
+        "fields": {
+            "sem": 1,
+            "crs_id": "1EPH",
+            "course": "Software Product Management"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 4,
+        "fields": {
+            "sem": 1,
+            "crs_id": "1ECV",
+            "course": "Software Architecture"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 6,
+        "fields": {
+            "sem": 2,
+            "crs_id": "2BEE",
+            "course": "Basic Electronics Engineering"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 7,
+        "fields": {
+            "sem": 2,
+            "crs_id": "2CPS",
+            "course": "C Programming for Problem Solving"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 7,
+        "fields": {
+            "sem": 2,
+            "crs_id": "2ECH",
+            "course": "Engineering Chemistry"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 8,
+        "fields": {
+            "sem": 2,
+            "crs_id": "2EMT",
+            "course": "Engineering Mathematics II"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 9,
+        "fields": {
+            "sem": 3,
+            "crs_id": "3CON",
+            "course": "Computer Organization"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 10,
+        "fields": {
+            "sem": 3,
+            "crs_id": "3DCN",
+            "course": "Data Communication"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 11,
+        "fields": {
+            "sem": 3,
+            "crs_id": "3DSC",
+            "course": "Data Structures with C"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 12,
+        "fields": {
+            "sem": 3,
+            "crs_id": "3DIT",
+            "course": "Discrete and Integral Transforms"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 13,
+        "fields": {
+            "sem": 3,
+            "crs_id": "3DLD",
+            "course": "Digital System and Logic Design"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 14,
+        "fields": {
+            "sem": 3,
+            "crs_id": "3DMS",
+            "course": "Discrete Mathematical Structures"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 15,
+        "fields": {
+            "sem": 4,
+            "crs_id": "4AFL",
+            "course": "Automata Theory and Formal Languages"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 16,
+        "fields": {
+            "sem": 4,
+            "crs_id": "4CVD",
+            "course": "Complex Variables and Distributions"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 17,
+        "fields": {
+            "sem": 4,
+            "crs_id": "4DAA",
+            "course": "Design and Analysis of Algorithms"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 18,
+        "fields": {
+            "sem": 4,
+            "crs_id": "4MPM",
+            "course": "Microprocessos and Microcontroller"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 19,
+        "fields": {
+            "sem": 4,
+            "crs_id": "4OOP",
+            "course": "Object Oriented Programming with C++"
+        }
+    },
+    {
+        "model": "courses.Courses",
+        "pk": 20,
+        "fields": {
+            "sem": 4,
+            "crs_id": "4OPS",
+            "course": "Operating Systems"
+        }
+    }
+    
+]

@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+    rel="shortcut icon"
+    type="png"
+    href="{% static 'authentication/images/icon/logo.png' %}"
+  />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Comaptible" content="IE=edge" />
+    
+    <script
+      src="https://kit.fontawesome.com/36bed4b74a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>LearnZ</title>
+    <meta name="desciption" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static './features/css/suggestedvideos.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static './features/css/features.css' %}"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha384-RIQuldGV8mnjGdob13cay/K1AJa+LR7VKHqSXrrB5DPGryn4pMUXRLh92Ev8KlGF" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="inner flex">
+        <div class="logo">
+          <a href="{% url 'index' %}">
+            <img
+              src="{% static './features/images/logo_full.png' %}"
+              alt="logo"
+          /></a>
+        </div>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          >
+            <li><a class="cour">Courses</a></li>
+            <li><a href="{% url 'suggestedvideos' %}">Refrences</a></li>
+            <li><a href="{% url 'student_quizbase' %}">Quiz</a></li>
+            <li><a href="{{syllabus.my_file.url}}">Syllabus</a></li>
+            <li><a href="{% url 'student_notesbase' %}">Notes</a></li>
+          </ul>
+        </nav>
+        <a href="{% url 'student_signin' %}">
+          <ul class="get-started">
+            <li>Sign Out</li>
+          </ul>
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 class="text-center mt-5">Suggested Videos</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="videos"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="{% static './features/js/suggestedvideos.js' %}"></script>
+  <script>
+    var cour = document.getElementsByClassName("cour");
+    Array.from(cour).forEach((c)=>{
+      c.addEventListener('click',(evt)=>{
+        evt.preventDefault();
+        $.ajax({
+        type: 'GET',
+        url: '/courses/',
+        success: function(response) {
+          window.location.href='/courses/';
+        }
+      });
+      });
+      
+    });
+  </script>
+</html>

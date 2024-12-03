@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+    rel="shortcut icon"
+    type="png"
+    href="{% static 'authentication/images/icon/logo.png' %}"
+  />
+    <link
+      href="{% static 'features/css/featuresTeacher.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'features/css/features.css' %}" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha384-RIQuldGV8mnjGdob13cay/K1AJa+LR7VKHqSXrrB5DPGryn4pMUXRLh92Ev8KlGF" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="inner flex">
+        <div class="logo">
+          <a href="{% url 'index' %}"
+            ><img
+              src="{% static 'authentication/images/icon/logo_full.png' %}"
+              alt="logo"
+          /></a>
+        </div>
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          >
+            <li><a href="" class="cour">Courses</a></li>
+            <li><a href="{% url 'suggestedvideos' %}">Refrences</a></li>
+            <li><a href="{% url 'quizbase' %}">Quiz</a></li>
+            <li><a href="{% url 'sylbase' %}">Syllabus</a></li>
+            <li><a href="{% url 'notesbase' %}">Notes</a></li>
+          </ul>
+        </nav>
+        <a href="{% url 'teacher_signin' %}">
+          <ul class="get-started">
+            <li>Sign Out</li>
+          </ul>
+        </a>
+      </div>
+    </header>
+
+    <div class="courses-cards" style="margin-left: 400px">
+      <!-- <div class="main-card" id="card_lectures">
+        <div
+          class="card-module"
+          style="background-image: url('./static/features/images/lectures.svg')"
+        >
+          <div class="post-content">
+            <h1 class="title">Reference</h1>
+            <a href="{% url 'suggestedvideos' %}">
+              <p class="description">
+                <button class="btn">View</button>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="main-card" id="card_quiz">
+        <div
+          class="card-module"
+          style="background-image: url('./static/features/images/quiz.svg')"
+        >
+          <div class="post-content">
+            <h1 class="title">Quiz</h1>
+            <a href="{% url 'quizbase' %}">
+              <p class="description">
+                <button class="btn">
+                  Upload<i class="fas fa-arrow-up"></i>
+                </button>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-card" id="card_syllabus">
+        <div
+          class="card-module"
+          style="background-image: url('./static/features/images/syllabus.svg')"
+        >
+          <div class="post-content">
+            <h1 class="title">Syllabus</h1>
+            <a href="{% url 'sylbase' %}">
+              <p class="description">
+                <button class="btn">
+                  Upload<i class="fas fa-arrow-up"></i>
+                </button>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-card" id="card_notes">
+        <div
+          class="card-module"
+          style="background-image: url('./static/features/images/notes.svg')"
+        >
+          <div class="post-content">
+            <h1 class="title">Notes</h1>
+            <p class="description">
+              <a href="{% url 'notesbase' %}">
+                <button class="btn">
+                  Upload<i class="fas fa-arrow-up"></i>
+                </button>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="{% static '\features\js\features.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script>
+    var cour = document.getElementsByClassName("cour");
+    Array.from(cour).forEach((c)=>{
+      c.addEventListener('click',(evt)=>{
+        evt.preventDefault();
+        $.ajax({
+        type: 'GET',
+        url: '/tcourse/',
+        success: function(response) {
+          window.location.href='/tcourse/';
+        }
+      });
+      });
+      
+    });
+  </script>
+</html>
