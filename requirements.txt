@@ -15,4 +15,3 @@ tzdata==2022.7
 #selenium==4.7.2
 Werkzeug==2.2.3
 django_cors_headers==4.6.0
-corsheaders
