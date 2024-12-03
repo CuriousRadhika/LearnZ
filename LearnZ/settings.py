@@ -54,11 +54,13 @@ INSTALLED_APPS = [
     'courses',
     'features',
     'UploadFiles',
+    'corsheaders',  # Add this line
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Add this line
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -150,3 +152,6 @@ STATICFILES_DIRS=[
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authentication.User'
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # Add this line
